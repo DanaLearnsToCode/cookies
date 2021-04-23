@@ -9,6 +9,10 @@ app = Flask(__name__)
 def renderMain():
     return render_template('home.html')
 
+@app.route('/startOver')
+def startOver():
+    session.clear() #clears variable values and creates a new session
+    return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
 
 
 
