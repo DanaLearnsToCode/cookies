@@ -5,6 +5,8 @@ from flask import session
 
 app = Flask(__name__)
 
+app.secret_key=os.environ["SECRET_KEY"];
+
 @app.route('/')
 def renderMain():
     return render_template('home.html')
