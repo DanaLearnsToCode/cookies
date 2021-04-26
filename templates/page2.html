@@ -1,12 +1,15 @@
 
 {% extends "layout.html" %}
 
-{% block title %}Page2{% endblock %}
+{% block title %}Question 2{% endblock %}
 
 {% block content %}
   <p>Page2</p>
-  <ul>
-   <li> You said the numbers of continents is: {{ session['question1'] }} </li>
-  </ul>
+  <form action={{ url_for("renderPage3") }} method="POST">
+  How many people live in the world round to the nearest billion? Ex: 2 billion:<br>
+  <input type="text" name="question2">
+  <br>
+  <input type="submit" value="Submit">
+ </form> 
 
 {% endblock %}
