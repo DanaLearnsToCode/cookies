@@ -37,6 +37,7 @@ t1 = time.time()
 total = t1-t0
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
+    session["total"]= total
     session["question3"]=request.form['question3']
     return render_template('page4.html')
 
