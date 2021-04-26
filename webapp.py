@@ -30,6 +30,10 @@ def renderPage3():
     session["question2"]=request.form['question2']
     return render_template('page3.html')
 
+@app.route('/page4',methods=['GET','POST'])
+def renderPage4():
+    session["question3"]=request.form['question3']
+    return render_template('page4.html')
 
 
 
