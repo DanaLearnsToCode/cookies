@@ -1,11 +1,14 @@
 {% extends "layout.html" %}
 
-{% block title %}Page2{% endblock %}
+{% block title %}Question 3{% endblock %}
 
 {% block content %}
-  <p>Page2</p>
-  <ul>
-   <li> You said the numbers of continents is: {{ session['question1'] }} </li>
-  </ul>
+  <p>Page3</p>
+  <form action={{ url_for("renderPage4") }} method="POST">
+  Which is the latitude that runs through the centre of the Earth?:<br>
+  <input type="text" name="question3">
+  <br>
+  <input type="submit" value="Submit">
+ </form> 
 
 {% endblock %}
