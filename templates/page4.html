@@ -1,0 +1,13 @@
+
+{% extends "layout.html" %}
+
+{% block title %}Page2{% endblock %}
+
+{% block content %}
+  <p>Page2</p>
+  <ul>
+   <li> You said the numbers of continents is: {{ session['question1'] }} </li>
+   <li> You said the there are: {{ session['question2'] }} people in the world</li>
+  </ul>
+
+{% endblock %}
