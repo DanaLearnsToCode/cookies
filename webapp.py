@@ -23,7 +23,7 @@ def startOver():
 @app.route('/page1')
 def renderPage1():
     return render_template('page1.html')
-
+t0 = time.time()
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
     session["question1"]=request.form['question1'] 
@@ -34,7 +34,7 @@ def renderPage3():
     t0 = time.time()
     session["question2"]=request.form['question2']
     return render_template('page3.html')
-    t1 = time.time()
+t1 = time.time()
 total = t1-t0
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
