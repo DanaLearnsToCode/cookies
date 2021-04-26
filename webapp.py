@@ -1,4 +1,7 @@
 import os
+import time
+
+
 from flask import Flask, url_for, render_template, request
 from flask import redirect
 from flask import session
@@ -18,6 +21,7 @@ def startOver():
 
 @app.route('/page1')
 def renderPage1():
+    t0 = time.time()
     return render_template('page1.html')
 
 @app.route('/page2',methods=['GET','POST'])
@@ -32,6 +36,8 @@ def renderPage3():
 
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
+    t1 = time.time()
+    total = t1-t0
     session["question3"]=request.form['question3']
     return render_template('page4.html')
 
