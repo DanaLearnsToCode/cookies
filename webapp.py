@@ -19,7 +19,7 @@ def startOver():
     session.clear() #clears variable values and creates a new session
     return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
 
-t0 = time.time()
+
 @app.route('/page1')
 def renderPage1():
     return render_template('page1.html')
@@ -31,9 +31,10 @@ def renderPage2():
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
+    t0 = time.time()
     session["question2"]=request.form['question2']
     return render_template('page3.html')
-t1 = time.time()
+    t1 = time.time()
 total = t1-t0
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
