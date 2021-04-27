@@ -10,6 +10,9 @@ app = Flask(__name__)
 
 app.secret_key=os.environ["SECRET_KEY"];
 
+score = 0
+grade = ""
+
 @app.route('/')
 def renderMain():
     return render_template('home.html')
@@ -38,8 +41,6 @@ def renderPage3():
     return render_template('page3.html')
 t1 = time.time()
 total = t1-t0
-score = 0
-grade = ""
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
     if session['question1'] == "7":
