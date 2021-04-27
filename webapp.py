@@ -38,8 +38,23 @@ def renderPage3():
     return render_template('page3.html')
 t1 = time.time()
 total = t1-t0
+score = 0
+grade = ""
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
+    if session['question1'] == "7":
+        score = score+1
+    if session['question2'] == "8 billion":
+        sessionscore = score+1
+    if session['question3'] == "equator":
+        score = score+1
+    if score == 1:
+        grade = "33.3%"
+    if score == 2:
+        grade = "66.6%"
+    if score == 3:
+        grade = "100%"
+
     session["total"]= total
     session["question3"]=request.form['question3']
     return render_template('page4.html')
