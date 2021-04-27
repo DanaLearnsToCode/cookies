@@ -31,7 +31,6 @@ def renderPage2():
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    t0 = time.time()
     session["question2"]=request.form['question2']
     return render_template('page3.html')
 t1 = time.time()
