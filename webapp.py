@@ -47,13 +47,13 @@ def renderPage3():
 t1 = time.time()
 total = t1-t0
 
-
+score = 0
+grade = ""
 
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
     
-score = 0
-grade = ""
+
     
     session["total"]= total
     
