@@ -55,25 +55,26 @@ def renderPage4():
     
 
     
-    session["total"]= total
-    
+    session["total"] = total
+    session["score"] = score
+    session["grade"] = grade
     if "question3" in session:     
         session["question3"] = session["question3"] 
     else: 
         session["question3"] = request.form['question3']
     
     if session['question1'] == "7":
-        score = score+1
+        session["score"] = session["score"]+1
     if session['question2'] == "8 billion":
-        sessionscore = score+1
+        session["score"] = session["score"]+1
     if session['question3'] == "equator":
-        score = score+1
-    if score == 1:
-        grade = "33.3%"
-    if score == 2:
-        grade = "66.6%"
-    if score == 3:
-        grade = "100%"
+        session["score"] = session["score"]+1
+    if session["score"] == 1:
+        session["grade"] = "33.3%"
+    if session["score"] == 2:
+        session["grade"] = "66.6%"
+    if session["score"] == 3:
+        session["grade"] = "100%"
 
     
     return render_template('page4.html')
