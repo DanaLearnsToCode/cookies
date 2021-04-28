@@ -52,8 +52,8 @@ total = t1-t0
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
     
-    score = 0
-    grade = ""
+score = 0
+grade = ""
     
     session["total"]= total
     
