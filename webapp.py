@@ -75,6 +75,8 @@ def renderPage4():
         session["grade"] = "66.6%"
     if session["score"] == 3:
         session["grade"] = "100%"
+    if session["score"] == 0:
+        session["grade"] = "0%"
 
     
     return render_template('page4.html')
